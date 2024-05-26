@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+    </div>
+    <div class="container">
+        <h1>Educational Quiz</h1>
+        <div id="topic-selection">
+            <h2>Select a Topic</h2>
+            <button onclick="showDifficultyOptions('math')">Math</button>
+            <button onclick="showDifficultyOptions('science')">Science</button>
+            <button onclick="showDifficultyOptions('history')">History</button>
+        </div>
+        <div id="difficulty-selection" style="display:none;">
+            <h2>Select Difficulty</h2>
+            <button onclick="startQuiz(selectedTopic, 'easy')">Easy</button>
+            <button onclick="startQuiz(selectedTopic, 'medium')">Medium</button>
+            <button onclick="startQuiz(selectedTopic, 'hard')">Hard</button>
+        </div>
+        <div id="quiz-container">
+            <div id="quiz-section" style="display:none;">
+                <button id="exit-quiz" onclick="exitQuiz()">X</button>
+                <div class="quiz-header">
+                    <h2 id="quiz-topic"></h2>
+                    <div id="quiz-timer">00:00:000</div>
+                </div>
+                <div id="question-counter"></div>
+                <div id="quiz-question"></div>
+                <button id="next-question" onclick="nextQuestion()">Next</button>
+            </div>
+            <div id="leaderboard-section" style="display:none;">
+                <h2>Leaderboard</h2>
+                <div id="leaderboard"></div>
+            </div>         
+        </div>
+        <div id="result-section" style="display:none;">
+            <h2>Results</h2>
+            <p id="correct-total"></p>
+            <div id="time-taken"></div>
+            <div id="incorrect-questions-container"></div>
+            <div id="pagination-container"></div>
+            <button onclick="restartQuiz()">Main Menu</button>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

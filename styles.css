@@ -1,0 +1,476 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #008147 0%, #004526 100%);
+}
+
+.container {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    text-align: center;
+    animation: pop-in 0.5s ease-in-out;
+    position: relative;
+}
+
+#leaderboard-section {
+    flex: 1;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#leaderboard-section h2 {
+    text-align: center;
+}
+
+.leaderboard-item {
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.leaderboard-item:last-child {
+    border-bottom: none;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #ff6347;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 1.2em;
+    margin: 10px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #ff4500;
+    transform: scale(1.1);
+}
+
+#question-counter {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #8A2BE2;
+}
+
+#quiz-question {
+    margin: 20px 0;
+    color: #333;
+}
+
+.question p {
+    font-size: 1.2em;
+}
+
+.option-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.option-buttons button {
+    width: 45%;
+    margin: 5px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.option-buttons button:hover {
+    background-color: #ff4500;
+    transform: scale(1.1);
+}
+
+#result-section p {
+    font-size: 1.2em;
+    color: #ff6347;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#exit-quiz {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    background-color: #f44336;
+}
+
+#exit-quiz:hover {
+    background-color: #d32f2f;
+}
+
+#quiz-timer {
+    font-size: 1.2em;
+    color: #333;
+}
+
+#exit-quiz:hover {
+    background-color: #d32f2f; /* Darker red color on hover */
+}
+
+@keyframes pop-in {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+.quiz-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#leaderboard-section {
+    flex: 0 0 200px; /* Adjust the width as needed */
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-area {
+    flex: 1;
+}
+
+
+
+#time-taken {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.incorrect-questions {
+    margin-top: 20px;
+}
+
+.incorrect-question {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.incorrect-question p {
+    margin: 5px 0;
+}
+
+.incorrect-question strong {
+    font-weight: bold;
+}
+
+.pagination {
+    margin-top: 10px;
+}
+
+.pagination button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background-color: #45a049;
+}
+
+.pagination button.active {
+    background-color: #357a37;
+    cursor: default;
+    transform: scale(1.1);
+}
+
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background: #111;
+}
+
+.square {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    animation: move 10s infinite ease-in-out;
+    border-radius: 10px;
+}
+
+.square:nth-child(1) {
+    left: 10%;
+    top: 20%;
+    animation-duration: 15s;
+    background-color: #ff6347; /* Tomato */
+}
+
+.square:nth-child(2) {
+    left: 15%;
+    top: 40%;
+    animation-duration: 25s;
+    background-color: #87ceeb; /* Sky Blue */
+    width: 70px;
+    height: 70px;
+}
+
+.square:nth-child(3) {
+    left: 10%;
+    top: 10%;
+    animation-duration: 20s;
+    background-color: #ffa500; /* Orange */
+}
+
+.square:nth-child(4) {
+    left: 5%;
+    top: 70%;
+    animation-duration: 18s;
+    background-color: #9acd32; /* Yellow Green */
+    width: 60px;
+    height: 60px;
+}
+
+.square:nth-child(5) {
+    left: 78%;
+    top: 80%;
+    animation-duration: 22s;
+    background-color: #9932cc; /* Purple */
+}
+
+.square:nth-child(6) {
+    left: 7%;
+    top: 50%;
+    animation-duration: 17s;
+    background-color: #ff8c00; /* Dark Orange */
+    width: 40px;
+    height: 40px;
+}
+
+.square:nth-child(7) {
+    left: 60%;
+    top: 30%;
+    animation-duration: 16s;
+    background-color: #00bfff; /* Deep Sky Blue */
+    width: 60px;
+    height: 60px;
+}
+
+.square:nth-child(8) {
+    left: 80%;
+    top: 20%;
+    animation-duration: 19s;
+    background-color: #ffd700; /* Gold */
+    width: 50px;
+    height: 50px;
+}
+
+.square:nth-child(9) {
+    left: 40%;
+    top: 80%;
+    animation-duration: 23s;
+    background-color: #00ff7f; /* Spring Green */
+    width: 65px;
+    height: 65px;
+}
+
+.square:nth-child(10) {
+    left: 10%;
+    top: 60%;
+    animation-duration: 21s;
+    background-color: #4169e1; /* Royal Blue */
+    width: 55px;
+    height: 55px;
+}
+
+.square:nth-child(11) {
+    left: 70%;
+    top: 40%;
+    animation-duration: 24s;
+    background-color: #ffdab9; /* Peach Puff */
+    width: 45px;
+    height: 45px;
+}
+
+.square:nth-child(12) {
+    left: 50%;
+    top: 60%;
+    animation-duration: 18s;
+    background-color: #00ffff; /* Cyan */
+    width: 75px;
+    height: 75px;
+}
+
+.square:nth-child(13) {
+    left: 10%;
+    top: 90%;
+    animation-duration: 15s;
+    background-color: #ff6347; /* Tomato */
+    width: 50px;
+    height: 50px;
+}
+
+.square:nth-child(14) {
+    left: 5%;
+    top: 75%;
+    animation-duration: 25s;
+    background-color: #87ceeb; /* Sky Blue */
+    width: 70px;
+    height: 70px;
+}
+
+.square:nth-child(15) {
+    left: 20%;
+    top: 65%;
+    animation-duration: 20s;
+    background-color: #ffa500; /* Orange */
+    width: 60px;
+    height: 60px;
+}
+
+.square:nth-child(16) {
+    left: 35%;
+    top: 80%;
+    animation-duration: 18s;
+    background-color: #9acd32; /* Yellow Green */
+    width: 60px;
+    height: 60px;
+}
+
+.square:nth-child(17) {
+    left: 50%;
+    top: 90%;
+    animation-duration: 22s;
+    background-color: #9932cc; /* Purple */
+    width: 65px;
+    height: 65px;
+}
+
+.square:nth-child(18) {
+    left: 65%;
+    top: 75%;
+    animation-duration: 17s;
+    background-color: #ff8c00; /* Dark Orange */
+    width: 40px;
+    height: 40px;
+}
+
+.square:nth-child(19) {
+    left: 80%;
+    top: 65%;
+    animation-duration: 16s;
+    background-color: #00bfff; /* Deep Sky Blue */
+    width: 60px;
+    height: 60px;
+}
+
+.square:nth-child(20) {
+    left: 90%;
+    top: 50%;
+    animation-duration: 19s;
+    background-color: #ffd700; /* Gold */
+    width: 50px;
+    height: 50px;
+}
+
+.square:nth-child(21) {
+    left: 85%;
+    top: 35%;
+    animation-duration: 23s;
+    background-color: #00ff7f; /* Spring Green */
+    width: 65px;
+    height: 65px;
+}
+
+.square:nth-child(22) {
+    left: 70%;
+    top: 25%;
+    animation-duration: 21s;
+    background-color: #4169e1; /* Royal Blue */
+    width: 55px;
+    height: 55px;
+}
+
+.square:nth-child(23) {
+    left: 55%;
+    top: 10%;
+    animation-duration: 24s;
+    background-color: #ffdab9; /* Peach Puff */
+    width: 45px;
+    height: 45px;
+}
+
+.square:nth-child(24) {
+    left: 40%;
+    top: 5%;
+    animation-duration: 18s;
+    background-color: #00ffff; /* Cyan */
+    width: 75px;
+    height: 75px;
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        scale: 1;
+    }
+    33% {
+        transform: translate(5vh, 2vh) rotate(180deg);
+        scale: 3;
+    }
+    66% {
+        transform: translate(-5vh, -2vh) rotate(-180deg);
+        scale: 2;
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+        scale: 1;
+    }
+}
